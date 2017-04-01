@@ -1,0 +1,3 @@
+rootProject.name = 'Assassin'
+
+include ':app'

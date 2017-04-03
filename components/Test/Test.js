@@ -1,3 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 
-export default () => <p>Test web</p>
+const Text = styled.p`
+  background-color: ${({ theme }) => theme.colors.secondary};
+`
+export default () => <Text>Test web</Text>

@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
+    "arrow-parens": ["error", "always"],
     "brace-style": ["error", "stroustrup"],
     "comma-dangle": ["error", "never"],
     "semi": ["error", "never"],

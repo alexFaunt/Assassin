@@ -5,7 +5,7 @@ import Test from '../Test/Test'
 const Container = styled.div`
   display: flex;
   height: 100%;
-  background-color: #F5FCFF;
+  background-color: ${({ theme }) => theme.colors.primary};
 `
 
 export default () => (

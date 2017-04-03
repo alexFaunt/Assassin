@@ -1,5 +1,6 @@
 export default {
   colors: {
-    primary: 'bisque'
+    primary: 'bisque',
+    secondary: 'red'
   }
 }

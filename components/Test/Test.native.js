@@ -1,4 +1,7 @@
 import React from 'react'
-import { Text } from 'react-native'
+import styled from 'styled-components/native'
 
-export default () => <Text>Test native</Text>
+const StyledText = styled.Text`
+  background-color: ${({ theme }) => theme.colors.secondary};
+`
+export default () => <StyledText>Test native</StyledText>

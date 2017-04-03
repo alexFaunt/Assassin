@@ -1,9 +1,12 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import Home from '../Home/Home'
+import { Provider as StoreProvider } from 'react-redux'
+import Routes from '../Routes/Routes'
 
-export default ({ theme }) => (
-  <ThemeProvider theme={theme}>
-    <Home />
-  </ThemeProvider>
+export default ({ store, theme }) => (
+  <StoreProvider store={store}>
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  </StoreProvider>
 )

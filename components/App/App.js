@@ -1,16 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
-import Test from '../Test/Test'
+import { ThemeProvider } from 'styled-components'
+import Home from '../Home/Home'
 
-const Container = styled.div`
-  flex: 1;
-  justify-content: center;
-  text-align: center;
-  background-color: #F5FCFF;
-`
-
-export default () => (
-  <Container>
-    <Test />
-  </Container>
+export default ({ theme }) => (
+  <ThemeProvider theme={theme}>
+    <Home />
+  </ThemeProvider>
 )

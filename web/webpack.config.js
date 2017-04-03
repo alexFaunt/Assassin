@@ -3,10 +3,11 @@ const path = require('path')
 const config = {
   target: 'web',
   entry: {
-    index: '../index.web.js'
+    index: path.join(__dirname, '../index.web.js')
   },
   output: {
     path: path.join(__dirname, './build'),
+    publicPath: '/assets/js/',
     filename: '[name].js'
   },
   module: {
@@ -22,12 +23,22 @@ const config = {
     modules: [
       'node_modules'
     ],
-    extensions: ['.js']
+    extensions: ['.js', '.jsx']
   },
-  // watch: !!process.env.WATCH,
-  devtool: 'eval-source-map',
   plugins: [
   ]
+}
+
+if (process.env.DEV) {
+  Object.assign(config, {
+    devServer: {
+      proxy: {
+        '/': 'http://localhost:3000'
+      }
+    },
+    watch: true,
+    devtool: 'eval-source-map'
+  })
 }
 
 module.exports = config

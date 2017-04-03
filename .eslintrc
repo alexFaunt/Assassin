@@ -2,8 +2,11 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "brace-style": ["error", "stroustrup"],
+    "comma-dangle": ["error", "never"],
     "semi": ["error", "never"],
-    "comma-dangle": ["error", "never"]
+
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": "off"
   }
 }

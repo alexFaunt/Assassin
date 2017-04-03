@@ -1,12 +1,13 @@
 /* eslint-disable global-require */
 require('babel-register')()
+const logger = require('../../utils/logger').default
 
 const path = require('path')
 
 const getApp = () => require('./server').default
 const startApp = () => getApp().listen(process.env.PORT || 3000, (error) => {
-  if (error) console.error(error)
-  else console.log('App started!')
+  if (error) logger.error(error)
+  else logger.log('App started!')
 })
 
 // start the app!
@@ -24,12 +25,12 @@ if (process.env.DEV) {
 
     // Kill the server and when complete restart it.
     server.close(() => {
-      console.log('App restarting...')
+      logger.log('App restarting...')
       try {
         server = startApp()
       }
       catch (error) {
-        console.error(error)
+        logger.error(error)
       }
     })
   }

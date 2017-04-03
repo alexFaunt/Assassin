@@ -2,14 +2,22 @@
   "name": "Assassin",
   "version": "0.0.1",
   "scripts": {
-    "start:ios": "react-native run-ios",
+    "ios:start": "react-native run-ios",
+
+    "android:start": "react-native run-android",
+
+    "web:start": "npm run web:build && npm run web:server",
     "web:dev": "concurrently \"npm run web:server:dev\" \"npm run web:client:dev\"",
     "web:server": "node ./web/server",
-    "web:client": "webpack-dev-server --config ./web/webpack.config.js",
+    "web:build": "webpack --config ./web/webpack.config.js",
     "web:server:dev": "DEV=true npm run web:server",
-    "web:client:dev": "DEV=true npm run web:client",
-    "start:web": "webpack --config ./web/webpack.config.js && open web/index.html",
-    "test:unit": "jest"
+    "web:client:dev": "DEV=true webpack-dev-server --config ./web/webpack.config.js",
+
+    "test:unit": "jest",
+    "lint": "eslint --ignore-path .gitignore .",
+
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
   },
   "dependencies": {
     "babel-register": "^6.24.0",
@@ -17,6 +25,7 @@
     "concurrently": "^3.4.0",
     "express": "^4.15.2",
     "hogan-express-strict": "^0.5.4",
+    "husky": "^0.13.3",
     "react": "~15.4.1",
     "react-dom": "^15.4.2",
     "react-native": "0.42.3",

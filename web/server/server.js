@@ -12,7 +12,7 @@ server.set('views', path.join(__dirname, './views/'))
 server.engine('mustache', hogan)
 
 server.get('*', (req, res) => {
-  res.status(200).render('index', app())
+  res.status(200).render('index', app(req))
 })
 
 export default server
